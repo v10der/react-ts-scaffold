@@ -1,0 +1,21 @@
+{
+  "name": "react-ts-scaffold",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/v10der/react-ts-scaffold.git",
+  "author": "v10der",
+  "license": "MIT",
+  "scripts": {
+    "dev": "",
+    "test": "",
+    "prod": ""
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "prettier": "^2.2.1"
+  }
+}
