@@ -1,7 +1,3 @@
-var a = 123
+import add from './hello';
 
-var b = 24
-
-var c = 54
-
-var c = 45
+add(1, 3);
