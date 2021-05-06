@@ -16,20 +16,13 @@
   "repository": "https://github.com/v10der/react-ts-scaffold.git",
   "author": "v10der",
   "license": "MIT",
-  "husky": {
-    "hooks": { 
-      "pre-commit": "lint-staged",
-      "commit-msg": "npx --no-install commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
-    }
-  },
   "scripts": {
     "lint": "npm run lint-eslint && npm run lint-stylelint",
     "lint-eslint": "eslint -c .eslintrc.js --ext .ts, .tsx, .js src",
     "lint-stylelint": "stylelint --config .stylelintrc.js src/**/*.{less,css,scss,sass}",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "dev": "",
-    "test": "",
-    "prod": "",
+    "start": "cross-env NODE_ENV=development webpack serve --config ./scripts/config/webpack.development.js --progress",
+    "build": "webpack --config ./scripts/webpack.common.js --progress",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -41,7 +34,11 @@
     "@commitlint/config-conventional": "^12.1.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "autoprefixer": "^10.2.5",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -50,9 +47,16 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^5.2.0",
+    "postcss-normalize": "^10.0.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.13.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
@@ -60,6 +64,14 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.19.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=8.10.0"
   }
 }

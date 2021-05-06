@@ -44,5 +44,10 @@ module.exports = {
       },
     ],
     'linebreak-style': [OFF, 'windows'],
+    '@typescript-eslint/no-var-requires': [OFF],
+    'import/no-extraneous-dependencies': [ERROR, { devDependencies: true }],
+    'global-require': [OFF],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
   },
 };

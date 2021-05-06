@@ -1,7 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+#echo "$1" -- .git/COMMIT_EDITMSG
+
 npx --no-install commitlint --config .commitlintrc.js --edit "$1"
 
-echo "$1"
-echo "$2"
+
