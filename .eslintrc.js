@@ -29,6 +29,7 @@ module.exports = {
       node: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
       },
+      typescript: {},
     },
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
@@ -49,5 +50,6 @@ module.exports = {
     'global-require': [OFF],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
+    'react/jsx-filename-extension': [OFF],
   },
 };

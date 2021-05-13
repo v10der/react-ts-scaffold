@@ -36,14 +36,23 @@ const getCssLoaders = (importLoaders) => [
 
 module.exports = {
   entry: {
-    app: path.resolve(PROJECT_PATH, './src/app.js'),
+    index: path.resolve(PROJECT_PATH, './src/index.tsx'),
   },
   output: {
     filename: `js/[name]${isDev ? '' : '.[contenthash:8]'}.js`,
     path: path.resolve(PROJECT_PATH, './dist'),
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.json'],
+  },
   module: {
     rules: [
+      {
+        test: /\.(tsx?|js)$/,
+        loader: 'babel-loader',
+        options: { cacheDirectory: true },
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/,
         use: getCssLoaders(1),
